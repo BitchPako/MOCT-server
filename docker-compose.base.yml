@@ -9,6 +9,10 @@ services:
     volumes:
       - snikket_data:/snikket
       - acme_challenges:/var/www/html/.well-known/acme-challenge
+      - ./branding/assets/most-logo.svg:/var/www/html/static/img/snikket-logo-text.svg:ro
+      - ./branding/assets/most-logo.svg:/var/www/html/static/img/snikket-logo.svg:ro
+      - ./branding/proxy/startup.html:/var/www/html/index.html:ro
+      - ./branding/proxy/error-pages:/var/www/html/_errors:ro
     restart: "unless-stopped"
   snikket_certs:
     container_name: snikket-certs
@@ -27,6 +31,11 @@ services:
     depends_on:
       snikket_server:
         condition: service_healthy
+    volumes:
+      - ./branding/assets/most-logo.svg:/opt/snikket-web-portal/snikket_web/static/img/snikket-logo.svg:ro
+      - ./branding/assets/most-logo.svg:/opt/snikket-web-portal/snikket_web/static/img/snikket-logo-text.svg:ro
+      - ./branding/portal/templates/_footer.html:/opt/snikket-web-portal/snikket_web/templates/_footer.html:ro
+      - ./branding/portal/templates/base.html:/opt/snikket-web-portal/snikket_web/templates/base.html:ro
     restart: "unless-stopped"
 
   snikket_server:

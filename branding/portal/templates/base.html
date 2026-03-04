@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<head>
+		<meta charset="utf-8">
+		{% block head_lead %}{% endblock %}
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{% block style %}
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
+		{% endblock %}
+		<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/snikket-logo.svg') }}">
+	</head>
+	<body{% if body_id | default(False) %} id="{{ body_id }}"{% endif %} class="{% if is_in_debug_mode %}debug{% endif %}{% if body_class | default(False) %} {{ body_class }}{% endif %} no-copy no-share"{% if onload | default(False) %} onload="{{ onload }}"{% endif %}>{% block body %}{% endblock %}</body>
+</html>
