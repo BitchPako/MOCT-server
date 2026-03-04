@@ -24,6 +24,9 @@ services:
     image: snikket/snikket-web-portal:beta
     network_mode: host
     env_file: snikket.conf
+    depends_on:
+      snikket_server:
+        condition: service_healthy
     restart: "unless-stopped"
 
   snikket_server:
@@ -33,6 +36,12 @@ services:
     volumes:
       - snikket_data:/snikket
     env_file: snikket.conf
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:5280/admin || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
     restart: "unless-stopped"
 
 volumes:
