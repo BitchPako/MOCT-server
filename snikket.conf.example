@@ -1,8 +1,16 @@
-# The domain of your Snikket instance
+# The domain of your МОСТ instance
 SNIKKET_DOMAIN=example.com
 
 # The email address of the primary admin
 SNIKKET_ADMIN_EMAIL=admin@example.com
+
+# Optional portal branding overrides for МОСТ
+# (unknown keys are ignored by services that don't support them)
+BRANDING_APP_NAME=МОСТ
+BRANDING_SERVER_NAME=МОСТ
+BRANDING_SHOW_APP_STORES=0
+BRANDING_SHOW_ALTERNATIVES=0
+BRANDING_INVITE_TITLE=Вас пригласили в МОСТ
 
 # Confirm you agree to the Let's Encrypt
 # terms of service (required). Review the
