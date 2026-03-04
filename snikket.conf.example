@@ -4,6 +4,9 @@ SNIKKET_DOMAIN=example.com
 # The email address of the primary admin
 SNIKKET_ADMIN_EMAIL=admin@example.com
 
+# Public service name used in the web portal
+SNIKKET_SITE_NAME=МОСТ
+
 # Optional portal branding overrides for МОСТ
 # (unknown keys are ignored by services that don't support them)
 BRANDING_APP_NAME=МОСТ
