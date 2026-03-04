@@ -18,7 +18,7 @@ if [ ! -f "$1" ]; then
 fi
 
 if [[ $(tar tzf "$1" | head -n1) != "snikket/" ]]; then
-	echo "The provided file is not a valid Snikket backup file";
+	echo "The provided file is not a valid МОСТ backup file";
 	exit 1;
 fi
 

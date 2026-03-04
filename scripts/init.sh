@@ -51,19 +51,19 @@ if [ -f snikket.conf ]; then
 	echo ""
 fi
 
-echo "## Snikket setup ##"
+echo "## МОСТ setup ##"
 echo ""
-echo "Welcome to Snikket. We're nearly ready to start your"
-echo "new Snikket service. First we need some configuration"
+echo "Welcome to МОСТ. We're nearly ready to start your"
+echo "new МОСТ service. First we need some configuration"
 echo "details."
 
 echo ""
 echo ""
-echo "Snikket domain. This is the domain name your Snikket"
+echo "МОСТ domain. This is the domain name your МОСТ"
 echo "service will use. For example, 'example.com' or 'chat.example.com'."
 echo "It must be a domain you own, with DNS records for this"
 echo "server's IP address. The domain/subdomain you enter will be"
-echo "dedicated to Snikket, and cannot be shared with e.g. a website."
+echo "dedicated to МОСТ, and cannot be shared with e.g. a website."
 echo ""
 read -r -p "Enter domain: " SNIKKET_DOMAIN
 
@@ -72,7 +72,7 @@ echo ""
 echo "Admin email address. This is communicated to your users"
 echo "of the $SNIKKET_DOMAIN service in case they require assistance."
 echo "It is also provided to Let's Encrypt, an organization that issues"
-echo "SSL/TLS certificates required for Snikket to encrypt connections."
+echo "SSL/TLS certificates required for МОСТ to encrypt connections."
 echo ""
 read -r -p "Enter admin email address: " SNIKKET_ADMIN_EMAIL
 
@@ -88,7 +88,7 @@ echo ""
 case "$SNIKKET_LETSENCRYPT_TOS_AGREE" in
 Y|y) ;;
 *)
-	echo "Snikket requires certificates from Let's Encrypt to set up"
+	echo "МОСТ requires certificates from Let's Encrypt to set up"
 	echo "the server. Since you do not accept the terms of service"
 	echo "(you answered: $SNIKKET_LETSENCRYPT_TOS_AGREE), the installation"
 	echo "cannot continue."
